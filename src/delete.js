@@ -1,11 +1,12 @@
 import handler from "./utils/handler";
 import dynamodb from "./utils/dynamoDb";
+import * as utils from "./utils";
 
 export const main = handler(async (event) => {
   const params = {
     TableName: process.env.TABLE_NAME,
     Key: {
-      userId: "123",
+      userId: utils.getUserId(event),
       noteId: event.pathParameters.id,
     },
   };
