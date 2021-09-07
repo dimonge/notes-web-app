@@ -1,7 +1,7 @@
 import * as uuid from "uuid";
 
-import dynamodb from "./utils/dynamodb";
 import handler from "./utils/handler";
+import dynamodb from "./utils/dynamodb";
 
 export const main = handler(async (event) => {
   const data = JSON.parse(event.body);
